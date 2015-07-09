@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/common_actionbar"></include>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:id="@+id/viewpager"
+                android:layout_height="100dp">
+        </android.support.v4.view.ViewPager>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/viewpager"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/btn_shengqian"
+                        android:src="@mipmap/ic_tab1frag_sheng"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/btn_zhengqian"
+                        android:src="@mipmap/ic_tab1frag_zheng"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/btn_tiqian"
+                        android:src="@mipmap/ic_tab1frag_ti"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="cn.car4s.app">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.call_phone"/>
+
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--<!—SD卡读取权限，用户写入离线定位数据&ndash;&gt;-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    <!--允许应用读取低级别的系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+
+    <!--【可选】如果需要设置前台是否显示通知，需要设置这个权限-->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <!-- 可选 -->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>;
+
+    <application
+            android:allowBackup="true"
+            android:name=".AppContext"
+            android:icon="@mipmap/ic_logo"
+            android:theme="@style/AppTheme"
+            android:label="@string/app_name">
+        <activity
+                android:name=".ui.activity.MainTabActivity"
+                android:label="@string/app_name">
+        </activity>
+        <activity android:name=".ui.activity.AppBMainActibity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.WebviewActivity"></activity>
+        <activity android:name=".ui.activity.LoginActivity"></activity>
+        <activity android:name=".ui.activity.ShengqianActivity"></activity>
+        <activity android:name=".ui.activity.ResetPwdActivity"></activity>
+        <activity android:name=".ui.activity.FeedbackActivity"></activity>
+        <activity android:name=".ui.activity.ChoosePositionActivity"></activity>
+        <activity android:name=".ui.activity.PayDemoActivity"></activity>
+        <activity android:name=".ui.activity.CarBaoyangActivity"></activity>
+        <activity android:name=".ui.activity.ChooseCarbrandActivity"></activity>
+        <activity android:name=".ui.activity.ChooseCarStyleActivity"></activity>
+        <activity android:name=".ui.activity.ProductDetailActivity"></activity>
+        <activity android:name=".ui.activity.ChooseStationActivity"></activity>
+        <activity android:name=".ui.activity.OrderFinishedActivity"></activity>
+        <activity android:name=".ui.activity.EditProfileActivity"></activity>
+        <activity android:name=".ui.activity.EditProfile2Activity"></activity>
+        <activity android:name=".ui.activity.TixianActivity"></activity>
+        <activity android:name=".ui.activity.BankActivity"></activity>
+        <activity android:name=".ui.activity.BankDetialActivity"></activity>
+        <activity android:name=".ui.activity.PingjiaJishiActivity"></activity>
+        <activity android:name=".ui.activity.SelectPhotoActivity"></activity>
+        <activity android:name=".ui.activity.ZhengqianActivity"></activity>
+        <activity android:name=".ui.activity.SchemeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="jcnalex"/>
+            </intent-filter>
+        </activity>
+        <!--sharesdk -->
+        <activity
+                android:name="com.mob.tools.MobUIShell"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--微信分享回调 -->
+        <activity
+                android:name=".wxapi.WXEntryActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:exported="true"
+                android:screenOrientation="portrait"/>
+        <!-- alipay sdk begin -->
+        <activity
+                android:name="com.alipay.sdk.app.H5PayActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind"
+                android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <!-- alipay sdk end -->
+        <meta-data android:value="559a855e67e58e42ca005615" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="test" android:name="UMENG_CHANNEL"/>
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        </service>
+
+        <receiver
+                android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+                android:process=":push"
+                android:exported="false">
+        </receiver>
+        <receiver
+                android:name="com.umeng.message.SystemReceiver"
+                android:process=":push">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+                android:name="com.umeng.message.MessageReceiver"
+                android:process=":push">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+                android:name="com.umeng.message.ElectionReceiver"
+                android:process=":push">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4"/>
+                <category android:name="umeng"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+                android:name="com.umeng.message.RegistrationReceiver"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="cn.car4s.app.intent.action.COMMAND"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.umeng.message.UmengMessageBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service
+                android:name="com.umeng.message.UmengService"
+                android:label="PushService"
+                android:exported="true"
+                android:process=":push">
+            <intent-filter>
+                <action android:name="cn.car4s.app.intent.action.START"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="cn.car4s.app.intent.action.COCKROACH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4"/>
+                <category android:name="umeng"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.umeng.message.UmengIntentService"
+                 android:process=":push"/>
+        <service
+                android:name="com.umeng.message.UmengMessageIntentReceiverService"
+                android:process=":push"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.android.agoo.client.ElectionReceiverService"/>
+            </intent-filter>
+        </service>
+        <!-- V1.3.0添加的service，负责下载通知的资源 -->
+        <service android:name="com.umeng.message.UmengDownloadResourceService"/>
+
+        <meta-data
+                android:name="UMENG_APPKEY"
+                android:value="559a855e67e58e42ca005615">
+        </meta-data>
+        <meta-data
+                android:name="UMENG_MESSAGE_SECRET"
+                android:value="a6c52cdb2345dcdd4298d41ce4a4c172">
+        </meta-data>
+        <meta-data
+                android:name="com.baidu.lbsapi.API_KEY"
+                android:value="key"/>//key:开发者申请的key
+
+
+        <meta-data android:name="TencentMapSDK" android:value="BXIBZ-7MMKD-PGR4H-PTMG4-36MLS-6TBT5"/>
+    </application>
+
+</manifest>

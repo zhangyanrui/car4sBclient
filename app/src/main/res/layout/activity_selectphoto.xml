@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/color_black"
+            android:visibility="visible">
+
+        <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="7dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="7dp"
+                android:paddingTop="7dp"
+                android:src="@mipmap/ic_loginactivity_back"
+                android:scaleType="fitStart"
+                android:textColor="@android:color/white"/>
+
+        <TextView
+                android:id="@+id/cameragroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="5dp"
+                android:textColor="@color/color_white"
+                android:drawableRight="@drawable/navigationbar_arrow_down"
+                android:text="相机胶卷"/>
+
+        <Button
+                android:id="@+id/confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:enabled="false"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="确定"
+                android:textSize="@dimen/textsize_normal"/>
+    </RelativeLayout>
+
+    <GridView
+            android:id="@+id/photogridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title"
+            android:fadingEdge="none"
+            android:numColumns="3">
+    </GridView>
+
+</RelativeLayout>

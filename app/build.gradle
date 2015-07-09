@@ -1,0 +1,63 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.1'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+}
+
+android {
+
+    compileSdkVersion 19
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "cn.car4sBclient.app"
+        minSdkVersion 11
+        targetSdkVersion 14
+        versionCode 2
+        versionName "1.0"
+//        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'car4s'
+            keyPassword 'keystore'
+            storeFile file('/Users/changxuebo/Documents/github/car4s/keystore.jks')
+            storePassword 'keystore'
+        }
+        release {
+            keyAlias 'car4s'
+            keyPassword 'keystore'
+            storeFile file('/Users/changxuebo/Documents/github/car4s/keystore.jks')
+            storePassword 'keystore'
+        }
+    }
+
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.android.support:recyclerview-v7:21.0.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.google.code.gson:gson:2.3'
+}

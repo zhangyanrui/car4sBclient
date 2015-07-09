@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <include layout="@layout/common_actionbar"></include>
+    <!--<ListView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1"-->
+    <!--android:id="@+id/listview"></ListView>-->
+
+    <!--<TextView style="@style/appstyle_basic_text_black" android:text="其他意见" android:layout_marginLeft="20dp"/>-->
+    <!--<EditText style="@style/appstyle_login_edittext" android:hint="有什么意见或者建议都可以吐吐槽" android:gravity="top|left"-->
+    <!--android:textColor="@android:color/black" android:textColorLink="@android:color/black"-->
+    <!--android:background="@drawable/shape_edt_redcorner" android:id="@+id/edt_feedback_text"-->
+    <!--android:layout_height="120dp" android:singleLine="false"/>-->
+    <!--<TextView style="@style/appstyle_basic_text" android:text="提交评价" android:background="@color/actionbar_red"-->
+    <!--android:layout_width="200dp" android:id="@+id/btn_feedback_commit"-->
+    <!--android:padding="10dp" android:layout_gravity="center_horizontal" android:layout_margin="20dp"></TextView>-->
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <!--<TextView style="@style/appstyle_basic_text_black" android:text="服务态度" android:layout_marginLeft="20dp"-->
+            <!--android:id="@+id/tv_1"/>-->
+            <!--<RatingBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5"-->
+            <!--style="?android:attr/ratingBarStyle" android:id="@+id/ratingbar1" android:stepSize="1"-->
+            <!--android:layout_gravity="center_horizontal"/>-->
+            <!--<TextView style="@style/appstyle_basic_text_black" android:text="服务质量" android:layout_marginLeft="20dp"-->
+            <!--android:id="@+id/tv_2"/>-->
+            <!--<RatingBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5"-->
+            <!--android:id="@+id/ratingbar2" android:stepSize="1"-->
+            <!--android:layout_gravity="center_horizontal"/>-->
+            <!--<TextView style="@style/appstyle_basic_text_black" android:text="服务时间" android:layout_marginLeft="20dp"-->
+            <!--android:id="@+id/tv_3"/>-->
+            <!--<RatingBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5"-->
+            <!--android:id="@+id/ratingbar3" android:stepSize="1"-->
+            <!--android:layout_gravity="center_horizontal"/>-->
+            <!--<TextView style="@style/appstyle_basic_text_black" android:text="整体满意度" android:layout_marginLeft="20dp"-->
+            <!--android:id="@+id/tv_4"/>-->
+            <!--<RatingBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5"-->
+            <!--android:id="@+id/ratingbar4" android:stepSize="1"-->
+            <!--android:layout_gravity="center_horizontal"/>-->
+            <!--<TextView style="@style/appstyle_basic_text_black" android:text="其他意见" android:layout_marginLeft="20dp"/>-->
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/layout_all"
+                          android:orientation="vertical"></LinearLayout>
+            <EditText style="@style/appstyle_login_edittext" android:hint="有什么意见或者建议都可以吐吐槽" android:gravity="top|left"
+                      android:textColor="@android:color/black" android:textColorLink="@android:color/black"
+                      android:background="@drawable/shape_edt_redcorner" android:id="@+id/edt_feedback_text"
+                      android:layout_height="120dp" android:singleLine="false"/>
+            <TextView style="@style/appstyle_basic_text" android:text="提交评价" android:background="@color/actionbar_red"
+                      android:layout_width="200dp" android:id="@+id/btn_feedback_commit"
+                      android:padding="10dp" android:layout_gravity="center_horizontal" android:layout_margin="20dp"
+                    />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

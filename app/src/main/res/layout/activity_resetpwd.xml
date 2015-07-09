@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent" android:background="@mipmap/bg_loginactivity_bg"
+              android:layout_height="match_parent">
+
+
+    <include layout="@layout/common_actionbar"></include>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+            <EditText style="@style/appstyle_login_edittext" android:inputType="number"
+                      android:id="@+id/edt_login_mobile" android:hint="手机号"
+                      android:drawableLeft="@mipmap/ic_loginactivity_mobile" android:layout_marginRight="20dp"/>
+            <LinearLayout style="@style/appstyle_login_horizal_line"
+                          android:layout_below="@+id/edt_login_mobile"></LinearLayout>
+
+            <TextView style="@style/appstyle_basic_text" android:background="@color/actionbar_red"
+                      android:padding="5dp" android:layout_marginBottom="2dp"
+                      android:layout_alignRight="@+id/edt_login_mobile" android:id="@+id/btn_login_getyanchengma"
+                      android:layout_alignBottom="@+id/edt_login_mobile"
+                      android:text="获取验证码"/>
+
+        </RelativeLayout>
+
+        <EditText style="@style/appstyle_login_edittext"
+                  android:id="@+id/edt_login_yanzhengma" android:hint="验证码"
+                  android:drawableLeft="@mipmap/ic_loginactivity_mobile"/>
+        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
+
+
+        <EditText style="@style/appstyle_login_edittext"
+                  android:id="@+id/edt_login_tuijianma" android:hint="推荐码(必填)"
+                  android:drawableLeft="@mipmap/ic_loginactivity_pwd"/>
+        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
+
+        <EditText style="@style/appstyle_login_edittext" android:inputType="textPassword"
+                  android:id="@+id/edt_login_pwd" android:hint="密码"
+                  android:drawableLeft="@mipmap/ic_loginactivity_pwd"/>
+        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
+
+
+        <EditText style="@style/appstyle_login_edittext" android:inputType="textPassword"
+                  android:id="@+id/edt_login_pwd_2" android:hint="验证密码"
+                  android:drawableLeft="@mipmap/ic_loginactivity_pwd"/>
+        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp" android:gravity="center_horizontal" android:id="@+id/layout_xieyi"
+                      android:orientation="horizontal">
+            <CheckBox android:layout_width="wrap_content" android:layout_height="40dp"
+                      android:id="@+id/checkbox" android:textSize="@dimen/textsize_small"
+                      android:textColor="@color/color_white"
+                      android:text="已阅读并同意" android:layout_gravity="center_horizontal"/>
+            <TextView style="@style/appstyle_basic_text" android:text="《APP使用协议》" android:layout_height="40dp"
+                      android:gravity="center" android:textSize="@dimen/textsize_small" android:id="@+id/btn_xieyi"/>
+
+        </LinearLayout>
+        <TextView style="@style/appstyle_basic_text" android:text="注册" android:layout_width="match_parent"
+                  android:layout_margin="20dp" android:id="@+id/btn_login"
+                  android:background="@color/actionbar_red"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:background="@mipmap/setting_head_bg">
+
+        <include layout="@layout/common_actionbar"></include>
+
+
+        <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@mipmap/setting_head_default"
+                android:layout_marginTop="10dp"
+                android:id="@+id/img_tab3_useravaster"/>
+
+        <TextView
+                style="@style/appstyle_basic_text"
+                android:textSize="@dimen/textsize_large"
+                android:id="@+id/tv_tab3_username"
+                android:text="张言瑞"/>
+
+        <TextView
+                style="@style/appstyle_basic_text"
+                android:textSize="@dimen/textsize_large"
+                android:text="编辑个人信息"
+                android:height="40dp"
+                android:id="@+id/btn_tab3_editprofile"
+                android:layout_width="200dp"
+                android:background="@mipmap/setting_edtiprofile"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <cn.car4s.app.ui.widget.SettingLayout
+                android:layout_width="match_parent"
+                android:id="@+id/setting_keyongjifen"
+                android:layout_height="51dp">
+
+        </cn.car4s.app.ui.widget.SettingLayout>
+
+        <cn.car4s.app.ui.widget.SettingLayout
+                android:layout_width="match_parent"
+                android:id="@+id/setting_dongjiejifen"
+                android:layout_height="51dp">
+
+        </cn.car4s.app.ui.widget.SettingLayout>
+        <cn.car4s.app.ui.widget.SettingLayout
+                android:layout_width="match_parent"
+                android:id="@+id/setting_xianxianshu"
+                android:layout_height="51dp"></cn.car4s.app.ui.widget.SettingLayout>
+
+        <cn.car4s.app.ui.widget.SettingLayout
+                android:layout_width="match_parent"
+                android:id="@+id/setting_feedback"
+                android:layout_height="51dp">
+
+        </cn.car4s.app.ui.widget.SettingLayout>
+
+        <cn.car4s.app.ui.widget.SettingLayout
+                android:layout_width="match_parent"
+                android:id="@+id/setting_aboutus"
+                android:layout_height="51dp">
+
+        </cn.car4s.app.ui.widget.SettingLayout>
+    </LinearLayout>
+
+</LinearLayout>

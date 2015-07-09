@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <include layout="@layout/common_actionbar"></include>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical">
+
+            <cn.car4s.app.ui.widget.SettingLayoutSmall android:layout_width="match_parent"
+                                                       android:id="@+id/wangdian"
+                                                       android:layout_height="40dp">
+            </cn.car4s.app.ui.widget.SettingLayoutSmall>
+
+            <cn.car4s.app.ui.widget.SettingLayoutSmall android:layout_width="match_parent"
+                                                       android:id="@+id/shijian"
+                                                       android:layout_height="40dp">
+            </cn.car4s.app.ui.widget.SettingLayoutSmall>
+            <cn.car4s.app.ui.widget.SettingLayoutSmall android:layout_width="match_parent"
+                                                       android:id="@+id/jishi"
+                                                       android:layout_height="40dp">
+            </cn.car4s.app.ui.widget.SettingLayoutSmall>
+
+            <TextView style="@style/appstyle_product_text" android:text="" android:layout_marginLeft="20dp"
+                      android:id="@+id/chanpin"/>
+            <TextView style="@style/appstyle_product_text" android:text="" android:layout_marginLeft="20dp"
+                      android:id="@+id/yuanjia"/>
+            <TextView style="@style/appstyle_product_text" android:text="" android:layout_marginLeft="20dp"
+                      android:id="@+id/xianjia"/>
+
+            <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:id="@+id/recyclerview" android:visibility="visible">
+            </android.support.v7.widget.RecyclerView>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+                          android:id="@+id/layout_zhekou"
+                          android:orientation="horizontal">
+                <TextView style="@style/appstyle_basic_text_black" android:text=""
+                          android:layout_height="match_parent" android:padding="5dp" android:gravity="left"
+                          android:layout_width="match_parent" android:id="@+id/tv_jifendikoudesc"
+                          android:textSize="@dimen/textsize_small" android:layout_weight="1"
+                          android:textColor="@color/darker_gray"/>
+                <CheckBox android:layout_width="wrap_content" android:checked="false"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="10dp" android:gravity="center" android:id="@+id/checkbox"
+                          android:layout_gravity="right"/>
+            </LinearLayout>
+            <TextView style="@style/appstyle_product_text" android:text="" android:layout_marginLeft="20dp"
+                      android:layout_width="match_parent"
+                      android:gravity="right" android:textColor="@color/maintab_red"
+                      android:id="@+id/allprice"/>
+            <Button style="@style/appstyle_basic_text" android:layout_width="match_parent" android:layout_margin="20dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/commit" android:layout_below="@+id/recyclerview"
+                    android:text="提交订单" android:background="@color/actionbar_red"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

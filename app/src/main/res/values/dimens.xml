@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsize_tiny">12sp</dimen>
+    <dimen name="textsize_small">14sp</dimen>
+    <dimen name="textsize_normal">16sp</dimen>
+    <dimen name="textsize_large">18sp</dimen>
+    <dimen name="textsize_huge">20sp</dimen>
+
+    <dimen name="sidebar_space">15dp</dimen>
+</resources>

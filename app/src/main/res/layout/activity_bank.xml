@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/common_actionbar"></include>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    style="@style/appstyle_basic_text_black"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:id="@+id/keyitixian"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="提现积分:"/>
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="点击选择提取积分"
+                        android:id="@+id/edt_1"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:layout_marginLeft="20dp"/>
+
+                <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/setting_goto"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_alignParentRight="true"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="转账方式:"/>
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="点击选择转账方式"
+                        android:id="@+id/edt_2"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:layout_marginLeft="20dp"/>
+
+                <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/setting_goto"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_alignParentRight="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="        账户:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="输入账户"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_3"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="    开户行:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="开户银行"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_4"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="    联系人:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="联系人"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="联系电话:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="联系电话"
+                        android:inputType="number"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_6"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="开户姓名:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="开户姓名"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_7"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="    身份证:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="身份证"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_8"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:layout_margin="5dp">
+
+                <TextView
+                        style="@style/appstyle_basic_text_black"
+                        android:text="其他说明:"/>
+
+                <EditText
+                        style="@style/appstyle_bank_edittext"
+                        android:hint="其他说明"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/edt_9"/>
+            </LinearLayout>
+
+            <TextView
+                    style="@style/appstyle_basic_text"
+                    android:text="提 交"
+                    android:background="@color/actionbar_red"
+                    android:layout_width="match_parent"
+                    android:id="@+id/btn_feedback_commit"
+                    android:padding="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

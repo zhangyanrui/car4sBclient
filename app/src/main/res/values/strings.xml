@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">指尖创业B端</string>
+    <string name="tab1">首页</string>
+    <string name="tab2">订单</string>
+    <string name="tab3">我的</string>
+    <string name="tab4">设置</string>
+
+    <string name="bemember">成为会员(会员)\n邀请好友(非会员)</string>
+
+
+    <string name="order_xianxia">下线订单</string>
+    <string name="order_yiwancheng">已完成订单</string>
+
+
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">上拉刷新</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+</resources>

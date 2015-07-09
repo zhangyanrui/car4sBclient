@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/common_actionbar"></include>
+
+
+    <TextView style="@style/appstyle_basic_text_black" android:id="@+id/tv_wangdian" android:text="登陆网点: "
+              android:layout_marginLeft="50dp" android:layout_marginTop="30dp"/>
+    <TextView style="@style/appstyle_basic_text_black" android:id="@+id/tv_yonghu" android:text="当前用户: "
+              android:layout_marginLeft="50dp"/>
+
+
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent" android:layout_height="match_parent"
+                                            android:visibility="visible"
+                                            android:id="@+id/recyclerview">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

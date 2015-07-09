@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_all"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/tv_item_pinedshowcartype_title"
+            style="@style/appstyle_basic_text_black"
+            android:gravity="center" android:layout_width="match_parent"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp" android:text="ssss"
+            android:paddingTop="5dp"
+            android:textSize="@dimen/textsize_large"
+            android:visibility="visible"/>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:background="@color/lighter_gray" android:clickable="true" android:id="@+id/layoutbottom"
+                  android:orientation="horizontal">
+
+        <ImageView android:layout_width="50dp" android:layout_height="50dp" android:id="@+id/img_car"
+                   android:layout_gravity="center_vertical"
+                   android:layout_margin="10dp"
+                />
+
+        <TextView
+                android:id="@+id/tv_item_pinendshowcartype_name"
+                style="@style/appstyle_basic_text_black"
+                android:layout_height="match_parent"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="10dp" android:text="aaa"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

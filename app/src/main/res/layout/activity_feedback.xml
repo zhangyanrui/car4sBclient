@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:background="@color/lighter_gray"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include layout="@layout/common_actionbar"></include>
+
+    <EditText style="@style/appstyle_login_edittext" android:hint="有什么意见或者建议都可以吐吐槽" android:gravity="top|left"
+              android:textColor="@android:color/black" android:textColorLink="@android:color/black"
+              android:background="@drawable/shape_edt_redcorner" android:id="@+id/edt_feedback_text"
+              android:layout_height="120dp" android:singleLine="false"/>
+
+
+    <TextView style="@style/appstyle_basic_text_black" android:text="联系方式" android:layout_marginLeft="20dp"/>
+
+    <EditText style="@style/appstyle_login_edittext" android:hint="邮箱/手机"
+              android:background="@drawable/shape_edt_redcorner" android:layout_marginTop="0dp"
+              android:id="@+id/edt_feedback_mobile" android:textColorLink="@android:color/black"
+              android:textColor="@android:color/black"/>
+
+
+    <TextView style="@style/appstyle_basic_text" android:text="提 交" android:background="@color/actionbar_red"
+              android:layout_width="80dp" android:id="@+id/btn_feedback_commit"
+              android:padding="10dp" android:layout_gravity="center_horizontal" android:layout_margin="20dp"
+            />
+</LinearLayout>

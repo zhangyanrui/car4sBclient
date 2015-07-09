@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:id="@+id/layout_actionbar_all"
+                android:background="@color/actionbar_red"
+                android:layout_height="50dp">
+
+    <LinearLayout
+            android:layout_width="100dp"
+            android:id="@+id/layout_actionbar_left"
+            android:orientation="vertical"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentLeft="true"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_actionbar_back_text"
+                android:gravity="center"
+                android:singleLine="true"
+                android:visibility="gone"
+                android:textSize="@dimen/textsize_small"
+                android:textColor="@android:color/white"/>
+
+        <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:visibility="gone"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btn_actionbar_back_img"
+                />
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:id="@+id/tv_actionbar_title"
+            android:layout_toLeftOf="@+id/layout_actionbar_right"
+            android:layout_toRightOf="@+id/layout_actionbar_left"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/textsize_large"
+            android:textColor="@android:color/white"/>
+
+    <LinearLayout
+            android:layout_width="100dp"
+            android:id="@+id/layout_actionbar_right"
+            android:orientation="vertical"
+            android:gravity="center_vertical|right"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:textColor="@android:color/white"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_actionbar_conform_text"
+                android:gravity="center"
+                android:singleLine="true"
+                android:visibility="gone"
+                android:textSize="@dimen/textsize_small"
+                />
+
+        <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:id="@+id/btn_actionbar_conform_img"
+                />
+    </LinearLayout>
+</RelativeLayout>
