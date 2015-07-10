@@ -99,6 +99,7 @@
         <activity android:name=".ui.activity.PingjiaJishiActivity"></activity>
         <activity android:name=".ui.activity.SelectPhotoActivity"></activity>
         <activity android:name=".ui.activity.ZhengqianActivity"></activity>
+        <activity android:name=".ui.activity.QueryActivity"></activity>
         <activity android:name=".ui.activity.SchemeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>

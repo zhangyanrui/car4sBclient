@@ -28,6 +28,7 @@ public class AppConfig {
     public static final String SP_KEY_PINGJIA = "sp_key_pingjia";
     public static final String SP_KEY_MOBILE = "sp_key_mobile";
     public static final String SP_KEY_PWD = "sp_key_pwd";
+    public static final String SP_KEY_ISGROUP = "sp_key_isgroup";
 
     public static final int REQUEST_CODE_RESETPWD = 100;
     public static final int REQUEST_CODE_REGISTER = 101;

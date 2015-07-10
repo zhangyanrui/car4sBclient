@@ -15,6 +15,7 @@ import butterknife.InjectView;
 import cn.car4s.app.AppConfig;
 import cn.car4s.app.R;
 import cn.car4s.app.api.HttpCallback;
+import cn.car4s.app.bean.StationBean;
 import cn.car4s.app.bean.UserBean;
 import cn.car4s.app.util.PreferencesUtil;
 import cn.car4s.app.util.ToastUtil;
@@ -37,6 +38,8 @@ public class LoginActivity extends BaseActivity implements IBase {
     RelativeLayout mActionbarBackLayoutall;
 
 
+    @InjectView(R.id.edt_login_wangdian)
+    EditText mEdtwangdian;
     @InjectView(R.id.edt_login_mobile)
     EditText mEdtMobile;
     @InjectView(R.id.edt_login_pwd)
@@ -69,6 +72,7 @@ public class LoginActivity extends BaseActivity implements IBase {
         mForgetPwd.setOnClickListener(onClickListener);
         mBtnRegister.setOnClickListener(onClickListener);
         mBtnLogin.setOnClickListener(onClickListener);
+        mEdtwangdian.setOnClickListener(onClickListener);
 
 
         mEdtMobile.setText(PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
@@ -94,14 +98,23 @@ public class LoginActivity extends BaseActivity implements IBase {
                     startActivityForResult(intent, AppConfig.REQUEST_CODE_REGISTER);
                     break;
                 case R.id.btn_login:
+                    if (mSelectedBean == null) {
+                        ToastUtil.showToastShort("请选择网点");
+                        return;
+                    }
                     phone = mEdtMobile.getText().toString().trim();
                     pwd = mEdtPwd.getText().toString().trim();
                     if (TextUtils.isEmpty(phone) || TextUtils.isEmpty(pwd)) {
                         ToastUtil.showToastShort("您的输入有误，请重新输入");
                     } else {
                         UserBean bean = new UserBean(phone, pwd);
-                        bean.login(callback);
+                        bean.AreaID = mSelectedBean.StationId;
+                        bean.loginB(callback);
                     }
+                    break;
+                case R.id.edt_login_wangdian:
+                    mIntent = new Intent(LoginActivity.this, ChooseStationActivity.class);
+                    startActivityForResult(mIntent, AppConfig.REQUEST_CODE_CHOOSE_STATION);
                     break;
             }
         }
@@ -121,22 +134,21 @@ public class LoginActivity extends BaseActivity implements IBase {
             mUserbean = UserBean.getLocalUserinfo();
             PreferencesUtil.putPreferences(AppConfig.SP_KEY_MOBILE, phone);
             PreferencesUtil.putPreferences(AppConfig.SP_KEY_PWD, pwd);
+            PreferencesUtil.putPreferences(AppConfig.SP_KEY_PWD, pwd);
+            PreferencesUtil.putPreferences(AppConfig.SP_KEY_ISGROUP, mUserbean.IsGroup);
             Log.e("--->", "" + PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
             setResult(Activity.RESULT_OK);
             finish();
         }
     };
-
+    StationBean mSelectedBean;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == AppConfig.REQUEST_CODE_RESETPWD && resultCode == Activity.RESULT_OK) {
-
-        }
-
-        if (requestCode == AppConfig.REQUEST_CODE_REGISTER && resultCode == Activity.RESULT_OK) {
-
+        if (requestCode == AppConfig.REQUEST_CODE_CHOOSE_STATION && resultCode == Activity.RESULT_OK) {
+            mSelectedBean = (StationBean) data.getSerializableExtra("bean");
+            mEdtwangdian.setText(mSelectedBean.StationName);
         }
     }
 

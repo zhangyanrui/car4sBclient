@@ -51,10 +51,10 @@ public class ShengqianGridBean extends BaseBean {
         listData = null;
         if (listData == null) {
             listData = new ArrayList<ShengqianGridBean>();
-            ShengqianGridBean bean = new ShengqianGridBean(R.mipmap.ic_shengqian_0_selected, R.mipmap.ic_shengqian_0_unselected, "汽车", true);
-            ShengqianGridBean bean2 = new ShengqianGridBean(R.mipmap.ic_shengqian_1_selected, R.mipmap.ic_shengqian_1_unselected, "餐饮", false);
-            ShengqianGridBean bean3 = new ShengqianGridBean(R.mipmap.ic_shengqian_2_selected, R.mipmap.ic_shengqian_2_unselected, "娱乐", false);
-            ShengqianGridBean bean4 = new ShengqianGridBean(R.mipmap.ic_shengqian_3_selected, R.mipmap.ic_shengqian_3_unselected, "电子产品", false);
+            ShengqianGridBean bean = new ShengqianGridBean(R.mipmap.ic_shengqian_0_selected, R.mipmap.ic_shengqian_0_unselected, "待处理订单", true);
+            ShengqianGridBean bean2 = new ShengqianGridBean(R.mipmap.ic_shengqian_1_selected, R.mipmap.ic_shengqian_1_unselected, "订单查询", false);
+            ShengqianGridBean bean3 = new ShengqianGridBean(R.mipmap.ic_shengqian_2_selected, R.mipmap.ic_shengqian_2_unselected, "技师绩效查询", false);
+            ShengqianGridBean bean4 = new ShengqianGridBean(R.mipmap.ic_shengqian_3_selected, R.mipmap.ic_shengqian_3_unselected, "暂未上线", false);
             listData.add(bean);
             listData.add(bean2);
             listData.add(bean3);

@@ -49,13 +49,21 @@ public class JishiBean extends BaseBean {
 //    action	GetTechnicianList
 //    StationID	网点ID
 
-    public void getJishilist(HttpCallback callback, String stationid, String data, String time) {
+    public void getJishilistForOrder(HttpCallback callback, String stationid, String data, String time) {
         Map map = new HashMap();
         map.put("action", "GetTechnicianList");
         map.put("StationID", "" + stationid);
         map.put("ServiceData", "" + data);
         map.put("ServiceTimeID", "" + time);
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
+
+
+    public void getJishilist(HttpCallback callback, String stationid) {
+        Map map = new HashMap();
+        map.put("action", "GetTechnicianList");
+        map.put("StationID", "" + stationid);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_SYS_PARA, map, callback);
     }
 
     static Type list_type = new TypeToken<List<JishiBean>>() {

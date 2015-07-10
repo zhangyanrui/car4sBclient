@@ -14,6 +14,7 @@ import cn.car4s.app.api.HttpCallback;
 import cn.car4s.app.bean.OrderBean;
 import cn.car4s.app.ui.adapter.OrderAdapter;
 import cn.car4s.app.ui.widget.xlistview.XListView;
+import cn.car4s.app.util.PreferencesUtil;
 import cn.car4s.app.util.ToastUtil;
 import com.squareup.okhttp.Request;
 
@@ -39,12 +40,15 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
 
     int mType;//0 finishorder 1 orderxianxia
 
+    OrderBean mQueryBean;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_finished);
         ButterKnife.inject(this);
         mType = getIntent().getIntExtra("type", 0);
+        mQueryBean = (OrderBean) getIntent().getSerializableExtra("bean");
         initUI();
         initData();
     }
@@ -52,11 +56,7 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
 
     @Override
     public void initUI() {
-        if (mType == 1) {
-            mActionbarTitle.setText("下线订单");
-        } else {
-            mActionbarTitle.setText("已完成订单");
-        }
+        mActionbarTitle.setText("查询结果");
         mActionbarBack.setVisibility(View.VISIBLE);
         mActionbarBack.setImageResource(R.mipmap.ic_loginactivity_back);
         mActionbarBack.setOnClickListener(new View.OnClickListener() {
@@ -111,9 +111,11 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
             mPageNo++;
         }
         if (mType == 0)
-            new OrderBean().getorderList(callback, mPageNo, 0);
-        else {
-            new OrderBean().getorderListXianxia(callback, mPageNo);
+            new OrderBean().getorderListClientb(callback, mPageNo, mQueryBean);
+        else if (mType == 1) {
+            new OrderBean().getJixiaoClientb(callback, mPageNo, mQueryBean);
+        } else {
+            new OrderBean().getFinishedorderListClientb(callback, mPageNo, PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
         }
     }
 

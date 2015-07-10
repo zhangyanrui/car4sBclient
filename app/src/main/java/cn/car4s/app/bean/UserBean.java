@@ -57,6 +57,13 @@ public class UserBean extends BaseBean {
     public String OfflineCount;
 
 
+    public String IsGroup;
+    public String IsTechnician;
+    public String PendingOrderCount;
+    public String StationID;
+    public String StationName;
+
+
     public UserBean(String phoneNumber, String passWord) {
         PhoneNumber = phoneNumber;
         PassWord = passWord;
@@ -85,6 +92,16 @@ public class UserBean extends BaseBean {
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_USER, map, callback);
     }
 
+    public void loginB(HttpCallback callback) {
+        Map map = new HashMap();
+        map.put("action", "Login");
+        map.put("StationID", this.AreaID + "");
+        map.put("UserCode", this.PhoneNumber + "");
+        map.put("PassWord", this.PassWord + "");
+        map.put("PlatForm", "Android");
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_CLIENTB, map, callback);
+    }
+
     //    action	GetUserMessage	必填	post
 //    Token	用户密钥	必填	header
     public void refresh(HttpCallback callback, String token) {
@@ -92,6 +109,13 @@ public class UserBean extends BaseBean {
         map.put("action", "GetUserMessage");
         map.put("Token", token);
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_USER, map, callback);
+    }
+
+    public void refreshClientB(HttpCallback callback, String token) {
+        Map map = new HashMap();
+        map.put("action", "GetUserMessage");
+        map.put("Token", token);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_CLIENTB, map, callback);
     }
 
 

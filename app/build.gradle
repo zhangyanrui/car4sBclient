@@ -36,15 +36,15 @@ android {
     }
     signingConfigs {
         debug {
-            keyAlias 'car4s'
+            keyAlias 'car4sbclient'
             keyPassword 'keystore'
-            storeFile file('/Users/changxuebo/Documents/github/car4s/keystore.jks')
+            storeFile file('E:/github/car4sBclient/keystore.jks')
             storePassword 'keystore'
         }
         release {
-            keyAlias 'car4s'
+            keyAlias 'car4sbclient'
             keyPassword 'keystore'
-            storeFile file('/Users/changxuebo/Documents/github/car4s/keystore.jks')
+            storeFile file('E:/github/car4sBclient/keystore.jks')
             storePassword 'keystore'
         }
     }
@@ -53,7 +53,7 @@ android {
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     //    compile 'com.android.support:support-v4:22.2.0'
     compile 'com.android.support:recyclerview-v7:21.0.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'

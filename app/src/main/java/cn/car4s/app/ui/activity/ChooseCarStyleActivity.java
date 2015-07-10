@@ -104,7 +104,7 @@ public class ChooseCarStyleActivity extends BaseActivity implements IBase {
         if (mType == 0)
             new CarSerisBean().getCarSersis(callback, mBrandbean);
         else
-            new JishiBean().getJishilist(callback, mStateid, mDataid, mTimeid);
+            new JishiBean().getJishilist(callback, mStateid);
     }
 
     HttpCallback callback = new HttpCallback() {

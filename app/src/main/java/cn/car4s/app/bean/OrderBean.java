@@ -233,5 +233,96 @@ public class OrderBean extends BaseBean {
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
     }
 
+//    action	GetFinishOrderList_B	必填	post
+//    Token	用户密钥(B端用户)	必填	header
+//    StationID	网点ID	必填
+//    TechnicianID	技师ID
+//    FinishTimeBeg	订单完成日期Beg	yyyy-MM-dd
+//    FinishTimeEnd	订单完成日期End	yyyy-MM-dd
+//    PageCode	页码	默认0
 
+    public String querystarttime;
+    public String queryendtime;
+
+    public void getorderListClientb(HttpCallback callback, int page, OrderBean orderBean) {
+        Map map = new HashMap();
+        map.put("action", "GetFinishOrderList_B");
+        map.put("StationID", "" + orderBean.StationID);
+        map.put("TechnicianID", "" + orderBean.TechnicianID);
+        map.put("FinishTimeBeg", "" + orderBean.querystarttime);
+        map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        map.put("PageCode", "" + page);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
+
+    //    action	GetFinishOrderList_B	必填	post
+//    Token	用户密钥(B端用户)	必填	header
+//    StationID	网点ID	必填
+//    TechnicianID	技师ID
+//    FinishTimeBeg	订单完成日期Beg	yyyy-MM-dd
+//    FinishTimeEnd	订单完成日期End	yyyy-MM-dd
+//    PageCode	页码	默认0
+    public void getJixiaoClientb(HttpCallback callback, int page, OrderBean orderBean) {
+        Map map = new HashMap();
+        map.put("action", "GetPerformanceList_B");
+        map.put("StationID", "" + orderBean.StationID);
+        map.put("TechnicianID", "" + orderBean.TechnicianID);
+        map.put("FinishTimeBeg", "" + orderBean.querystarttime);
+        map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        map.put("PageCode", "" + page);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
+
+//    action	GetPendingOrderList	必填	post
+//    Token	用户密钥(B端用户)	必填	header
+//    PhoneNumber	客户手机号码
+//    PageCode	页码	必填
+
+    public void getFinishedorderListClientb(HttpCallback callback, int page, String mobile) {
+        Map map = new HashMap();
+        map.put("action", "GetPendingOrderList");
+        map.put("PhoneNumber", "" + mobile);
+        map.put("PageCode", "" + page);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
+
+//    7.2.3.	参数说明
+//    参数名称	说明	备注	传参方式
+//    action	FinishOrder	必填
+//    Token	用户密钥	必填	header
+//    OrderID	订单ID	必填
+
+
+    public void finishOrderClientB(HttpCallback callback, int orderid) {
+        Map map = new HashMap();
+        map.put("action", "FinishOrder");
+        map.put("OrderID", "" + orderid);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
+
+    //    action	GetOrderDetail_B	必填
+//    Token	用户密钥	必填	header
+//    OrderID	订单ID	必填
+    public void getOrderDetialClientB(HttpCallback callback, int orderid) {
+        Map map = new HashMap();
+        map.put("action", "GetOrderDetail_B");
+        map.put("OrderID", "" + orderid);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
+
+//    TechnicianID	技师ID	必填
+//    FinishTimeBeg	订单完成日期Beg	yyyy-MM-dd
+//    FinishTimeEnd	订单完成日期End	yyyy-MM-dd
+//    PageCode	页码	默认0
+
+    public void getjixiaoDetialClientB(HttpCallback callback, int pageno, OrderBean querybean) {
+        Map map = new HashMap();
+        map.put("action", "GetPerformanceDetail_B");
+        map.put("PageCode", "" + pageno);
+        map.put("TechnicianID", "" + querybean.TechnicianID);
+        map.put("FinishTimeBeg", "" + querybean.querystarttime);
+        map.put("FinishTimeEnd", "" + querybean.queryendtime);
+        map.put("PageCode", "" + pageno);
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
+    }
 }

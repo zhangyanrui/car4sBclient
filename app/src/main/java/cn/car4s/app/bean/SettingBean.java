@@ -121,4 +121,27 @@ public class SettingBean extends BaseBean {
         return listData;
     }
 
+
+    public static List<SettingBean> creatQueryData() {
+        listData = null;
+        if (listData == null) {
+            listData = new ArrayList<SettingBean>();
+            SettingBean bean;
+            UserBean mUserbean = UserBean.getLocalUserinfo();
+            if ("T".equals(mUserbean.IsGroup)) {
+                bean = new SettingBean(0, R.mipmap.setting_goto, "网点", "");
+            } else {
+                bean = new SettingBean(0, 0, mUserbean.StationName, "");
+            }
+            SettingBean bean2 = new SettingBean(0, R.mipmap.setting_goto, "技师", "");
+            SettingBean bean3 = new SettingBean(0, R.mipmap.setting_goto, "开始日期", "");
+            SettingBean bean4 = new SettingBean(0, R.mipmap.setting_goto, "结束日期", "");
+            listData.add(bean);
+            listData.add(bean2);
+            listData.add(bean3);
+            listData.add(bean4);
+        }
+        return listData;
+    }
+
 }

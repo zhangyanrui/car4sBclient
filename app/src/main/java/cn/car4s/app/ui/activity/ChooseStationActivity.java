@@ -13,7 +13,6 @@ import android.widget.TextView;
 import cn.car4s.app.AppConfig;
 import cn.car4s.app.R;
 import cn.car4s.app.api.HttpCallback;
-import cn.car4s.app.bean.StationAreaBean;
 import cn.car4s.app.bean.StationBean;
 import cn.car4s.app.ui.adapter.ChooseStationAdapter;
 import cn.car4s.app.ui.widget.RecyclerItemClickListener;
@@ -97,7 +96,7 @@ public class ChooseStationActivity extends BaseActivity implements IBase {
 
     @Override
     public void initData() {
-        new StationBean().getStation(callback);
+        new StationBean().getStationClientB(callback);
     }
 
     HttpCallback callback = new HttpCallback() {

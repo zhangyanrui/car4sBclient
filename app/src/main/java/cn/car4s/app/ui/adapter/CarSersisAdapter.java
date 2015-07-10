@@ -74,26 +74,30 @@ public class CarSersisAdapter extends BaseAdapter {
             ImageLoader.getInstance().displayImage(bean.HeadPicturePath, viewholder.carimg, AppContext.display_avaster_imageloader);
             viewholder.tv_item_pinendshowcartype_name.setText(bean.UserName);
             viewholder.img_yuyue.setVisibility(View.VISIBLE);
-            if ("F".equals(bean.IsBusy)) {
-                viewholder.img_yuyue.setBackgroundResource(R.drawable.shape_jish_notbusy);
-                viewholder.img_yuyue.setText("预约");
-            } else {
-                viewholder.img_yuyue.setBackgroundResource(R.drawable.shape_jish_busy);
-                viewholder.img_yuyue.setText("忙碌");
-            }
+//            if ("F".equals(bean.IsBusy)) {
+//                viewholder.img_yuyue.setBackgroundResource(R.drawable.shape_jish_notbusy);
+//                viewholder.img_yuyue.setText("预约");
+//            } else {
+//                viewholder.img_yuyue.setBackgroundResource(R.drawable.shape_jish_busy);
+//                viewholder.img_yuyue.setText("忙碌");
+//            }
             viewholder.img_yuyue.setTag(bean);
             viewholder.img_yuyue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     JishiBean bean = (JishiBean) view.getTag();
-                    if ("F".equals(bean.IsBusy)) {
-                        Intent intent = new Intent();
-                        intent.putExtra("bean", bean);
-                        ((Activity) context).setResult(Activity.RESULT_OK, intent);
-                        ((Activity) context).finish();
-                    } else {
-                        return;
-                    }
+                    Intent intent = new Intent();
+                    intent.putExtra("bean", bean);
+                    ((Activity) context).setResult(Activity.RESULT_OK, intent);
+                    ((Activity) context).finish();
+//                    if ("F".equals(bean.IsBusy)) {
+//                        Intent intent = new Intent();
+//                        intent.putExtra("bean", bean);
+//                        ((Activity) context).setResult(Activity.RESULT_OK, intent);
+//                        ((Activity) context).finish();
+//                    } else {
+//                        return;
+//                    }
                 }
             });
 

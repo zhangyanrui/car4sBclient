@@ -1,44 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
-              android:layout_width="match_parent" android:background="@mipmap/bg_loginactivity_bg"
+              android:layout_width="match_parent"
+              android:background="@mipmap/bg_loginactivity_bg"
               android:layout_height="match_parent">
 
 
     <include layout="@layout/common_actionbar"></include>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                  android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-        <EditText style="@style/appstyle_login_edittext" android:inputType="number"
-                  android:id="@+id/edt_login_mobile" android:hint="手机号"
-                  android:drawableLeft="@mipmap/ic_loginactivity_mobile"/>
+        <EditText
+                style="@style/appstyle_login_edittext"
+                android:inputType="number"
+                android:id="@+id/edt_login_wangdian"
+                android:hint="网点"
+                android:drawableLeft="@mipmap/ic_loginactivity_mobile"/>
+
         <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
 
 
-        <EditText style="@style/appstyle_login_edittext" android:inputType="textPassword"
-                  android:id="@+id/edt_login_pwd" android:hint="密码"
-                  android:drawableLeft="@mipmap/ic_loginactivity_pwd"/>
-        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal">
-            <TextView style="@style/appstyle_basic_text" android:text="忘记密码" android:layout_alignParentLeft="true"
-                      android:id="@+id/btn_forgetpwd"
-                      android:textSize="@dimen/textsize_small"/>
+        <EditText
+                style="@style/appstyle_login_edittext"
+                android:inputType="number"
+                android:id="@+id/edt_login_mobile"
+                android:hint="手机号"
+                android:drawableLeft="@mipmap/ic_loginactivity_mobile"/>
 
-            <TextView style="@style/appstyle_basic_text" android:text="没有账号？点击注册"
-                      android:id="@+id/btn_register"
-                      android:textSize="@dimen/textsize_small"
-                      android:layout_alignParentRight="true"/>
+        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
+
+
+        <EditText
+                style="@style/appstyle_login_edittext"
+                android:inputType="textPassword"
+                android:id="@+id/edt_login_pwd"
+                android:hint="密码"
+                android:drawableLeft="@mipmap/ic_loginactivity_pwd"/>
+
+        <LinearLayout style="@style/appstyle_login_horizal_line"></LinearLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/appstyle_basic_text"
+                    android:text="忘记密码"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/btn_forgetpwd"
+                    android:textSize="@dimen/textsize_small"/>
+
+            <TextView
+                    style="@style/appstyle_basic_text"
+                    android:text="没有账号？点击注册"
+                    android:id="@+id/btn_register"
+                    android:textSize="@dimen/textsize_small"
+                    android:layout_alignParentRight="true"/>
 
         </RelativeLayout>
 
 
-        <TextView style="@style/appstyle_basic_text" android:text="登陆" android:layout_width="match_parent"
-                  android:layout_margin="20dp" android:id="@+id/btn_login"
-                  android:background="@color/actionbar_red"/>
+        <TextView
+                style="@style/appstyle_basic_text"
+                android:text="登陆"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:id="@+id/btn_login"
+                android:background="@color/actionbar_red"/>
 
     </LinearLayout>
 

@@ -68,6 +68,14 @@ public class StationBean extends BaseBean {
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_SYS_PARA, map, callback);
     }
 
+//    action	•	GetStation_B	必填
+    public void getStationClientB(HttpCallback callback) {
+        Map map = new HashMap();
+        map.put("action", "GetStation_B");
+        NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_SYS_PARA, map, callback);
+    }
+
+
     static Type list_type = new TypeToken<List<StationBean>>() {
     }.getType();
 
