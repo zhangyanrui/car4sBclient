@@ -76,6 +76,11 @@ public class OrderBean extends BaseBean {
     public String Description;
 
     public long time_daizhifu;
+    public String PhoneNumber;
+    public String UserName;
+    public String OrderNum;
+    public String AwardMoney;
+    public String CommissionAmount;
 
     public String AvailablePoint;
     public String FreezingPoint;
@@ -244,13 +249,17 @@ public class OrderBean extends BaseBean {
     public String querystarttime;
     public String queryendtime;
 
-    public void getorderListClientb(HttpCallback callback, int page, OrderBean orderBean) {
+    public void getFinishorderListClientb(HttpCallback callback, int page, OrderBean orderBean) {
         Map map = new HashMap();
         map.put("action", "GetFinishOrderList_B");
         map.put("StationID", "" + orderBean.StationID);
         map.put("TechnicianID", "" + orderBean.TechnicianID);
-        map.put("FinishTimeBeg", "" + orderBean.querystarttime);
-        map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        if (!TextUtils.isEmpty(orderBean.querystarttime)) {
+            map.put("FinishTimeBeg", "" + orderBean.querystarttime);
+        }
+        if (!TextUtils.isEmpty(orderBean.queryendtime)) {
+            map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        }
         map.put("PageCode", "" + page);
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
     }
@@ -267,8 +276,12 @@ public class OrderBean extends BaseBean {
         map.put("action", "GetPerformanceList_B");
         map.put("StationID", "" + orderBean.StationID);
         map.put("TechnicianID", "" + orderBean.TechnicianID);
-        map.put("FinishTimeBeg", "" + orderBean.querystarttime);
-        map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        if (!TextUtils.isEmpty(orderBean.querystarttime)) {
+            map.put("FinishTimeBeg", "" + orderBean.querystarttime);
+        }
+        if (!TextUtils.isEmpty(orderBean.queryendtime)) {
+            map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        }
         map.put("PageCode", "" + page);
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
     }
@@ -278,10 +291,10 @@ public class OrderBean extends BaseBean {
 //    PhoneNumber	客户手机号码
 //    PageCode	页码	必填
 
-    public void getFinishedorderListClientb(HttpCallback callback, int page, String mobile) {
+    public void getPendingorderListClientb(HttpCallback callback, int page, String mobile) {
         Map map = new HashMap();
         map.put("action", "GetPendingOrderList");
-        map.put("PhoneNumber", "" + mobile);
+        map.put("PhoneNumber", "");
         map.put("PageCode", "" + page);
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
     }
@@ -293,7 +306,7 @@ public class OrderBean extends BaseBean {
 //    OrderID	订单ID	必填
 
 
-    public void finishOrderClientB(HttpCallback callback, int orderid) {
+    public void finishOrderClientB(HttpCallback callback, String orderid) {
         Map map = new HashMap();
         map.put("action", "FinishOrder");
         map.put("OrderID", "" + orderid);
@@ -303,7 +316,7 @@ public class OrderBean extends BaseBean {
     //    action	GetOrderDetail_B	必填
 //    Token	用户密钥	必填	header
 //    OrderID	订单ID	必填
-    public void getOrderDetialClientB(HttpCallback callback, int orderid) {
+    public void getOrderDetialClientB(HttpCallback callback, String orderid) {
         Map map = new HashMap();
         map.put("action", "GetOrderDetail_B");
         map.put("OrderID", "" + orderid);
@@ -315,13 +328,17 @@ public class OrderBean extends BaseBean {
 //    FinishTimeEnd	订单完成日期End	yyyy-MM-dd
 //    PageCode	页码	默认0
 
-    public void getjixiaoDetialClientB(HttpCallback callback, int pageno, OrderBean querybean) {
+    public void getjixiaoDetialClientB(HttpCallback callback, int pageno, OrderBean orderBean) {
         Map map = new HashMap();
         map.put("action", "GetPerformanceDetail_B");
         map.put("PageCode", "" + pageno);
-        map.put("TechnicianID", "" + querybean.TechnicianID);
-        map.put("FinishTimeBeg", "" + querybean.querystarttime);
-        map.put("FinishTimeEnd", "" + querybean.queryendtime);
+        map.put("TechnicianID", "" + orderBean.TechnicianID);
+        if (!TextUtils.isEmpty(orderBean.querystarttime)) {
+            map.put("FinishTimeBeg", "" + orderBean.querystarttime);
+        }
+        if (!TextUtils.isEmpty(orderBean.queryendtime)) {
+            map.put("FinishTimeEnd", "" + orderBean.queryendtime);
+        }
         map.put("PageCode", "" + pageno);
         NetUtil.doPostMap(AppConfig.APP_SERVER + ApiService.INTERFACE_PRODUCT, map, callback);
     }

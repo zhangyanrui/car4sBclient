@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.car4s.app.R;
 import cn.car4s.app.bean.OrderBean;
+import cn.car4s.app.ui.activity.OrderFinishedActivity;
 import cn.car4s.app.ui.activity.ProductDetailActivity;
 import cn.car4s.app.util.LogUtil;
 
@@ -31,6 +32,8 @@ public class OrderAdapter extends BaseAdapter {
     OrderDo orderDo;
     SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     SimpleDateFormat df2 = new SimpleDateFormat("mm:ss");
+
+    public int mType;
 
     public OrderAdapter(List<Object> list, Context context, OrderDo orderDo) {
         this.list = list;
@@ -133,25 +136,50 @@ public class OrderAdapter extends BaseAdapter {
                 }
             });
         } else {//下线订单
+            viewholder.title.setText("套餐: " + bean.ProductName);
+            viewholder.desc1.setText("下单时间: " + bean.OrderTime);
+            viewholder.desc2.setText("网点: " + bean.StationName);
+            if (mType == 0) {//查询订单
+                viewholder.layout_pingjia.setVisibility(View.GONE);
+                viewholder.pingjia.setText("");
+                viewholder.tv_timeshengyu.setText("手机号: " + bean.PhoneNumber + "\n\n" + "用户: " + bean.UserName + "\n\n" + "技师: " + bean.TechnicianName);
+            } else if (mType == 1) {//绩效
+                viewholder.title.setText("技师: " + bean.TechnicianName);
+                viewholder.desc2.setText("完成订单: " + bean.OrderNum + " 单");
+                viewholder.desc1.setText("网点: " + bean.StationName);
+                viewholder.tv_timeshengyu.setText("奖励: " + bean.AwardMoney + " 元");
+            } else if (mType == 5) {//绩效详情
+                viewholder.layout_pingjia.setVisibility(View.GONE);
+                viewholder.pingjia.setText("");
+                viewholder.tv_timeshengyu.setText("手机号: " + bean.PhoneNumber + "\n\n" + "用户: " + bean.UserName + "\n\n" + "技师: " + bean.TechnicianName
+                        + "\n\n" + "奖励金额: " + bean.CommissionAmount);
+            } else {//待处理订单
+                viewholder.layout_pingjia.setVisibility(View.VISIBLE);
+                viewholder.pingjia.setText("完成");
+                viewholder.tv_timeshengyu.setText("手机号: " + bean.PhoneNumber + "\n\n" + "用户: " + bean.UserName);
+            }
             viewholder.tv_timeshengyu.setVisibility(View.VISIBLE);
-            viewholder.tv_timeshengyu.setText("手机号: " + bean.PhoneNumber_Sub + "\n\n" + "贡献积分: " + bean.ContributionPoint);
             viewholder.title.setBackgroundResource(R.color.transparent);
-//            viewholder.layout_all.setTag(bean);
-//            viewholder.layout_all.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    OrderBean bean1 = (OrderBean) view.getTag();
-//
-//                    Intent intent = new Intent(context, ProductDetailActivity.class);
-//                    intent.putExtra("type", 3);
-//                    intent.putExtra("orderid", bean1.OrderID);
-//                    context.startActivity(intent);
-//                }
-//            });
+            viewholder.layout_all.setTag(bean);
+            viewholder.layout_all.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    OrderBean bean1 = (OrderBean) view.getTag();
+                    if (mType == 1) {
+                        Intent intent = new Intent(context, OrderFinishedActivity.class);
+                        intent.putExtra("type", 5);
+                        intent.putExtra("bean", bean1);
+                        context.startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(context, ProductDetailActivity.class);
+                        intent.putExtra("type", 3);
+                        intent.putExtra("orderid", bean1.OrderID);
+                        context.startActivity(intent);
+                    }
+                }
+            });
         }
-        viewholder.title.setText("套餐: " + bean.ProductName);
-        viewholder.desc1.setText("下单时间: " + bean.OrderTime);
-        viewholder.desc2.setText("网点: " + bean.StationName);
+
         viewholder.edit.setTag(bean);
         viewholder.edit.setOnClickListener(new View.OnClickListener() {
             @Override

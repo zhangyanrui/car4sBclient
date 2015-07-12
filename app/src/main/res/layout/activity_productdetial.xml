@@ -37,7 +37,7 @@
                                                     android:id="@+id/recyclerview" android:visibility="visible">
             </android.support.v7.widget.RecyclerView>
             <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
-                          android:id="@+id/layout_zhekou"
+                          android:id="@+id/layout_zhekou" android:visibility="gone"
                           android:orientation="horizontal">
                 <TextView style="@style/appstyle_basic_text_black" android:text=""
                           android:layout_height="match_parent" android:padding="5dp" android:gravity="left"
@@ -50,7 +50,7 @@
                           android:layout_gravity="right"/>
             </LinearLayout>
             <TextView style="@style/appstyle_product_text" android:text="" android:layout_marginLeft="20dp"
-                      android:layout_width="match_parent"
+                      android:layout_width="match_parent" android:visibility="gone"
                       android:gravity="right" android:textColor="@color/maintab_red"
                       android:id="@+id/allprice"/>
             <Button style="@style/appstyle_basic_text" android:layout_width="match_parent" android:layout_margin="20dp"

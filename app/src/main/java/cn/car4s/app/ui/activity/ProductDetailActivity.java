@@ -438,7 +438,7 @@ public class ProductDetailActivity extends BaseActivity implements IBase {
                 checkbox.setClickable(false);
                 break;
             case 3:
-                mActionbarTitle.setText("订单详情");
+                mActionbarTitle.setText("详情");
                 mcommit.setVisibility(View.GONE);
                 mlayoutwangdian.setOnClickListener(null);
                 mlayoutShijian.setOnClickListener(null);
@@ -453,6 +453,7 @@ public class ProductDetailActivity extends BaseActivity implements IBase {
                 mlayoutjishi.getBean().desc = orderBean.TechnicianName;
                 mlayoutjishi.setData(mlayoutjishi.getBean());
                 checkbox.setClickable(false);
+                layout_zhekou.setVisibility(View.GONE);
                 break;
         }
     }
@@ -518,7 +519,7 @@ public class ProductDetailActivity extends BaseActivity implements IBase {
         if (mType == 0)
             mproductBean.getProductDetial(callback, mproductBean);
         else {
-            new OrderBean().getOrderDetial(callbackGetOrderdetial, mOrderIdIntent);
+            new OrderBean().getOrderDetialClientB(callbackGetOrderdetial, mOrderIdIntent);
         }
     }
 

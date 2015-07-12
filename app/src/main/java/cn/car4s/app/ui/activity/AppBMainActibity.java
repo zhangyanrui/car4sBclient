@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import butterknife.InjectView;
 import cn.car4s.app.AppConfig;
 import cn.car4s.app.R;
 import cn.car4s.app.api.HttpCallback;
+import cn.car4s.app.bean.OrderBean;
 import cn.car4s.app.bean.ShengqianGridBean;
 import cn.car4s.app.bean.UserBean;
 import cn.car4s.app.ui.adapter.ShengqianAdapter;
@@ -19,6 +21,8 @@ import cn.car4s.app.ui.widget.RecyclerItemClickListener;
 import cn.car4s.app.util.PreferencesUtil;
 import cn.car4s.app.util.ToastUtil;
 import com.squareup.okhttp.Request;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -117,8 +121,34 @@ public class AppBMainActibity extends BaseActivity implements IBase {
             mtvWangdian.setText("登陆网点: " + mUserbean.StationName);
             mtvYonghu.setText("当前用户: " + mUserbean.UserName);
         }
+        new OrderBean().getPendingorderListClientb(callback, 1, PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
     }
 
+    HttpCallback callback = new HttpCallback() {
+        @Override
+        public void onFailure(Request request, IOException e) {
+
+        }
+
+        @Override
+        public void onResponse(String result) {
+            int number = 0;
+            if (!TextUtils.isEmpty(result)) {
+                try {
+                    number = new JSONObject(result).getInt("Total");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (number != 0) {
+                list.get(0).title = "待处理订单(" + number + ")";
+            } else {
+                list.get(0).title = "待处理订单";
+
+            }
+            adapter.notifyDataSetChanged();
+        }
+    };
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {

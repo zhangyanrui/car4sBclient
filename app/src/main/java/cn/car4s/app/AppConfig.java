@@ -10,8 +10,8 @@ public class AppConfig {
 
     //    public static final String TEST_ID = "18553805868";
 //    public static final String TEST_PWD = "111111";
-    public static final String TEST_ID = "";
-    public static final String TEST_PWD = "";
+    public static final String TEST_ID = "13391308762";
+    public static final String TEST_PWD = "1";
 
 
     //offical

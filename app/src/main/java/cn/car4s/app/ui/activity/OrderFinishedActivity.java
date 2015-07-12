@@ -68,6 +68,7 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
         listView = (XListView) findViewById(R.id.listview);
         listView.setXListViewListener(new MyRefreshListener());
         adapter = new OrderAdapter(list, OrderFinishedActivity.this, orderDo);
+        adapter.mType = mType;
         listView.setAdapter(adapter);
     }
 
@@ -96,7 +97,7 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
             }
             adapter.notifyDataSetChanged();
             if (list.size() == 0) {
-                ToastUtil.showToastShort("暂无订单");
+                ToastUtil.showToastShort("暂无内容");
             }
         }
     };
@@ -111,11 +112,13 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
             mPageNo++;
         }
         if (mType == 0)
-            new OrderBean().getorderListClientb(callback, mPageNo, mQueryBean);
+            new OrderBean().getFinishorderListClientb(callback, mPageNo, mQueryBean);
         else if (mType == 1) {
             new OrderBean().getJixiaoClientb(callback, mPageNo, mQueryBean);
+        } else if (mType == 5) {
+            new OrderBean().getjixiaoDetialClientB(callback, mPageNo, mQueryBean);
         } else {
-            new OrderBean().getFinishedorderListClientb(callback, mPageNo, PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
+            new OrderBean().getPendingorderListClientb(callback, mPageNo, PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
         }
     }
 
@@ -161,12 +164,25 @@ public class OrderFinishedActivity extends BaseActivity implements IBase {
 
         @Override
         public void pingjia(OrderBean bean) {
-            Intent intent = new Intent(OrderFinishedActivity.this, PingjiaJishiActivity.class);
-            intent.putExtra("id", bean.OrderID);
-            startActivity(intent);
+            new OrderBean().finishOrderClientB(callbackFinsishedorder, bean.OrderID);
+//            Intent intent = new Intent(OrderFinishedActivity.this, PingjiaJishiActivity.class);
+//            intent.putExtra("id", bean.OrderID);
+//            startActivity(intent);
         }
     };
     HttpCallback callbackCancelorder = new HttpCallback() {
+        @Override
+        public void onFailure(Request request, IOException e) {
+        }
+
+        @Override
+        public void onResponse(String result) {
+            Log.e("--->", "" + result);
+            load(true);
+        }
+    };
+
+    HttpCallback callbackFinsishedorder = new HttpCallback() {
         @Override
         public void onFailure(Request request, IOException e) {
         }
