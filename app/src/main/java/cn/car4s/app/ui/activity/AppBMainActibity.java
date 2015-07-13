@@ -85,15 +85,30 @@ public class AppBMainActibity extends BaseActivity implements IBase {
             public void onItemClick(View view, int position) {
                 switch (position) {
                     case 0:
+                        if (mUserbean == null) {
+                            mIntent = new Intent(AppBMainActibity.this, LoginActivity.class);
+                            startActivity(mIntent);
+                            return;
+                        }
                         Intent m = new Intent(AppBMainActibity.this, OrderFinishedActivity.class);
                         m.putExtra("type", 3);
                         startActivity(m);
                         break;
                     case 1:
+                        if (mUserbean == null) {
+                            mIntent = new Intent(AppBMainActibity.this, LoginActivity.class);
+                            startActivity(mIntent);
+                            return;
+                        }
                         mIntent = new Intent(AppBMainActibity.this, QueryActivity.class);
                         startActivity(mIntent);
                         break;
                     case 2:
+                        if (mUserbean == null) {
+                            mIntent = new Intent(AppBMainActibity.this, LoginActivity.class);
+                            startActivity(mIntent);
+                            return;
+                        }
                         mIntent = new Intent(AppBMainActibity.this, QueryActivity.class);
                         mIntent.putExtra("type", 1);
                         startActivity(mIntent);
@@ -116,12 +131,14 @@ public class AppBMainActibity extends BaseActivity implements IBase {
             mActionbarBack.setText("登陆");
             mtvWangdian.setText("");
             mtvYonghu.setText("请登陆");
+            list.get(0).title = "待处理订单";
+            adapter.notifyDataSetChanged();
         } else {
             mActionbarBack.setText("注销");
             mtvWangdian.setText("登陆网点: " + mUserbean.StationName);
             mtvYonghu.setText("当前用户: " + mUserbean.UserName);
+            new OrderBean().getPendingorderListClientb(callback, 1, PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
         }
-        new OrderBean().getPendingorderListClientb(callback, 1, PreferencesUtil.getPreferences(AppConfig.SP_KEY_MOBILE, ""));
     }
 
     HttpCallback callback = new HttpCallback() {

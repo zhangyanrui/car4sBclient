@@ -15,8 +15,8 @@ public class AppConfig {
 
 
     //offical
-//    public static final String APP_SERVER = "http://www.syzjcy.com/App_Interface/";
-    public static final String APP_SERVER = "http://www.siding.cn:6789/App_Interface/";
+    public static final String APP_SERVER = "http://www.syzjcy.com/App_Interface/";
+    //    public static final String APP_SERVER = "http://www.siding.cn:6789/App_Interface/";
     public static final String DIR_ROOT = "car4s";
     public static final String DIR_IMAGELOADER_CACHE = DIR_ROOT + "/imgcache";
 
